@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import sys
 
-with open('Gao.html') as html_file: #Html input file name here, can change
+with open('Burtscher.html') as html_file: #Html input file name here, can change
     soup = BeautifulSoup(html_file, 'lxml')
 
 name = soup.find('div', class_='page-heading clearfix').find('h1', class_='heading-title pull-left')
@@ -18,7 +18,7 @@ wp = soup.find('div', class_='details col-md-9 col-sm-8 col-xs-6').find('a', hre
 
 original_stdout = sys.stdout
 
-with open('output3.txt', 'w') as f:
+with open('output.txt', 'w') as f:
     sys.stdout = f
     print("Name: " + txt)
     print("Education: " + info2)
